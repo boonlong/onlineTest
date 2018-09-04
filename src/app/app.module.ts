@@ -20,6 +20,9 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
+//firebase
+import { AngularFireModule } from 'angularfire2';
+
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -40,6 +43,15 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
+export const config={
+  apiKey: "AIzaSyC-1W2exZiKswvI2CT3wn_RZXBhUdQvROQ",
+  authDomain: "test1-a4ea1.firebaseapp.com",
+  databaseURL: "https://test1-a4ea1.firebaseio.com",
+  projectId: "test1-a4ea1",
+  storageBucket: "test1-a4ea1.appspot.com",
+  messagingSenderId: "900565964708"
+}
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -52,7 +64,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(config)
   ],
   declarations: [
     AppComponent,
